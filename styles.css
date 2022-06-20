@@ -1,70 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+:root {
+  --primary-red: hsl(0, 78%, 62%);
+  --primary-cyan: hsl(180, 62%, 55%);
+  --primary-orange: hsl(34, 97%, 64%);
+  --primary-bleu: hsl(212, 86%, 64%);
+  --neutral-Very-Dark-Blue: hsl(234, 12%, 34%);
+  --neutral-Grayish-Blue: hsl(229, 6%, 66%);
+  --neutral-Very-Light-Gray: hsl(0, 0%, 98%);
+}
 
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+html, body {
+  font-family: 'Poppins', sans-serif;
+  background-position: left top, bottom right;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--neutral-Very-Light-Gray);
+  margin: auto;
+  line-height: 1.5;
+}
 
-  <title>Frontend Mentor | Four card feature section</title>
+h1,
+.top-container {
+  margin: auto;
+  color: var(--neutral-Very-Dark-Blue);
+  max-width: 70%;
+  margin: auto;
+}
 
-<link rel="stylesheet" href="styles.css">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+h3,
+.description {
+  margin-left: 1.5rem;
+  text-align: left;
+}
 
-</head>
-<body>
-<main>
-  <div class="top-container">
-    <h1> Reliable, efficient delivery</h1>
-    <h1 class="title-two">Powered by Technology</h1>
+h1 {
+  font-weight: lighter;
+  color: var(--neutral-Grayish-Blue);
+  text-align: center;
+}
 
-      <p>Our Artificial Intelligence powered tools use millions of project data points
-      to ensure that your project is successful</p>
+p {
+  max-width: 60%;
+  margin: auto;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 200;
+  color: var(--neutral-Grayish-Blue);
+  line-height: 1.5;
+}
 
-  </div>
+img {
+  margin-left: 9rem;
+  margin-bottom: 4rem;
+  position: absolute;
+  right: 1rem;
+  top: 6.5rem;
+  width: 2rem;
+}
 
-<div class="middle-container">
+.title-two {
+  font-weight: bold;
+  color: hsl(229, 6%, 36%);
+}
 
-<div class="supervisor">
+.description {
+  padding-bottom: 2.5rem;
+  font-size: 0.8rem;
+  width: 60%;
+}
 
-  <h3>Supervisor</h3>
-  <p class="description">Monitors activity to identify project roadblocks</p>
-  <img src="icon-supervisor.svg" alt="">
-</div>
+.top-container {
+  margin-top: 2rem;
+}
 
-<div class="team-builder">
+.middle-container {
+  max-width: 70%;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-rows:repeat(5,25%);
+  gap: 0.5rem;
 
-  <h3>Team Builder</h3>
-  <p class="description">Scans our talent network to create the optimal team for your project</p>
-<img src="icon-team-builder.svg" alt="">
-</div>
+}
+
+.supervisor .team-builder .karma .calculator {
+  background-color: hsl(0, 100%, 100%);
+  width:100px;
+  border-top: solid 3px;
+}
+
+.supervisor {
+  border-top: solid 3px;
+  border-top-color: var(--primary-cyan);
+  grid-column: 1;
+  grid-row: 2 /4 ;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px 10px hsl(229, 6%, 90%);
+  position: relative;
+
+}
+
+.team-builder {
+  border-top: solid 3px;
+  border-top-color: var(--primary-red);
+grid-column: 2 ;
+grid-row: 1/ 3;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px 10px hsl(229, 6%, 90%);
+  position: relative;
+}
+
+.karma {
+  border-top: solid 3px;
+  border-top-color: var(--primary-orange);
+  grid-column: 2 ;
+  grid-row: 3/ 5;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px 10px hsl(229, 6%, 90%);
+  position: relative;
+}
+
+.calculator {
+  border-top: solid 3px;
+  border-top-color: var(--primary-bleu);
+  grid-column: 3 ;
+  grid-row: 2/ 4;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px 10px hsl(229, 6%, 90%);
+  position: relative;
+}
+
+.supervisor,
+.team-builder,
+.karma,
+.calculator:hover {
+  cursor: pointer;
+}
 
 
-<div class="karma">
-  <h3>Karma</h3>
-  <p class="description">Regularly evaluates our talent to ensure quality</p>
-  <img src="icon-karma.svg" alt="">
-</div>
+/***************** for mobile ************/
 
-<div class="calculator">
+@media (max-width:802px) {
 
-  <h3>Calculator</h3>
-  <p class="description">Uses data from past projects to provide better delivery estimates</p>
-<img src="icon-calculator.svg" alt="">
-</div>
+  h1,
+  .top-container {
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+  }
 
-</div>
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Yous Ben</a>.
-    </p>
-  </footer>
+  img {
+    position: absolute;
+    top: 6.5rem;
+    right: 1.5rem;
+  }
 
-  </main>
-</body>
-</html>
+  .top-container {
+    margin: 3rem;
+  }
+
+  .middle-container {
+    max-width: 70%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:repeat (4,1fr);
+  }
+
+  .supervisor,
+  .team-builder,
+  .karma,
+  .calculator {
+    grid-column: 1;
+  }
+
+  .supervisor {
+    grid-row: 1;
+  }
+
+  .team-builder {
+    grid-row: 2;
+  }
+
+  .karma {
+    grid-row: 3;
+  }
+
+  .calculator {
+    grid-row: 4;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
