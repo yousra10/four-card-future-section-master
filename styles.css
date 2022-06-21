@@ -34,7 +34,7 @@ h1,
   margin: auto;
 }
 
-h3,
+h2,
 .description {
   margin-left: 1.5rem;
   text-align: left;
@@ -44,6 +44,9 @@ h1 {
   font-weight: lighter;
   color: var(--neutral-Grayish-Blue);
   text-align: center;
+}
+h2{
+  font-size: 1rem;
 }
 
 p {
